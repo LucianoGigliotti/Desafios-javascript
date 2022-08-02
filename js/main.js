@@ -1,55 +1,61 @@
-debugger
+let bienvenido = alert("¡Bienvenidos a #SerMensana Store! A continuación podrá seleccionar los productos que quiera comprar")
 
-let tipoPrenda = prompt("Ingrese el tipo de prenda(short, remera, pantalon, buzo)")
+let productos = prompt("Consulte el stock de la prenda que usted quiera comprar (Buzo, Campera, Pantalon, Chomba, Remera de algodon, Remera de entrenamiento, Short)")
 
-switch (tipoPrenda.toLowerCase()){
-    case"short":
-        console.log("si, tenemos", tipoPrenda)
+switch (productos.toLowerCase()){
+    case "buzo":
+        console.log("si, tenemos", productos)
         break
-    case "remera":
-        console.log("si, tenemos ", tipoPrenda)
+    case "campera":
+        console.log("si, tenemos ", productos)
         break
     case "pantalon":
-        console.log("si, tenemos", tipoPrenda)
+        console.log("si, tenemos", productos)
         break
-    case "buzo":
-        console.log("si, tenemos", tipoPrenda)
+    case "chomba":
+        console.log("si, tenemos", productos)
+        break
+    case "remera de algodon":
+        console.log("si, tenemos", productos)
+        break
+    case "remera de entrenamiento":
+        console.log("si, tenemos", productos)
+        break
+    case "short":
+        console.log("si, tenemos", productos)
         break
     default:
         console.warn("no tenemos en stock")    
 }
 
 
-
 debugger
 
-let talle = prompt("Ingrese el talle que desea(s, m, l, xl, xxl")
+let tipoProducto = parseInt(prompt("¿Que desea comprar?(Ingrese solamente el número de la opción): 1-Buzo, 2-Campera, 3-Pantalon, 4-Chomba, 5-Remera de algodon, 6-Remera de entrenamiento, 7-Short"))
+venta () 
 
-switch (talle.toLowerCase()){
-    case"s":
-        console.log("si, tenemos el talle", talle)
-        break
-    case "m":
-        console.log("si, tenemos el talle", talle)
-        break
-    case "l":
-        console.log("si, tenemos el talle", talle)
-        break
-    case "xl":
-        console.log("si, tenemos el talle", talle)
-        break
-    case "xxl":
-        console.log("si, tenemos el talle", talle)
-        break
-    default:
-        console.warn("no trabajamos ese talle")    
-        
-}
-
-debugger
-
-let cantidadPrendas = parseInt(prompt("Ingrese cantidad de prendas que quiera comprar"))
-
-for (let i = 0; i < cantidadPrendas; i++) {
-    console.log("Iteracion Nro.", i)
+function venta() {
+    switch (tipoProducto){
+        case 1:  
+            alert("Perfecto, tu Buzo Mensana se ha añadido al carrito. El valor es de $5000")
+            break   
+        case 2:
+            alert("Perfecto, tu Campera Mensana se ha añadido al carrito. El valor es de $6000")
+            break
+        case 3:
+            alert("Perfecto, tu Pantalon Mensana se ha añadido al carrito. El valor es de $4000")
+            break
+        case 4:
+            alert("Perfecto, tu Chomba Mensana se ha añadido al carrito. El valor es de $1500")
+            break
+        case 5:
+            alert("Perfecto, tu Remera de algodón Mensana se ha añadido al carrito. El valor es de $1250")
+            break
+        case 6:
+            alert("Perfecto, tu Remera de entrenamiento Mensana se ha añadido al carrito. El valor es de $1000")
+            break
+        case 7:
+            alert("Perfecto, tu Short de entrenamiento Mensana se ha añadido al carrito. El valor es de $750")
+            break
+    }
 }
