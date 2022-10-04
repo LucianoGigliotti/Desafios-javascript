@@ -29,8 +29,6 @@ switch (productos.toLowerCase()){
 }
 
 
-debugger
-
 let tipoProducto = parseInt(prompt("¿Que desea comprar?(Ingrese solamente el número de la opción): 1-Buzo, 2-Campera, 3-Pantalon, 4-Chomba, 5-Remera de algodon, 6-Remera de entrenamiento, 7-Short"))
 venta () 
 
