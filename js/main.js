@@ -1,59 +1,80 @@
-let bienvenido = alert("¡Bienvenidos a #SerMensana Store! A continuación podrá seleccionar los productos que quiera comprar")
+const productos = [
+    {nombre: "buzo", precio: 5000},
+    {nombre: "campera", precio: 6000},
+    {nombre: "pantalon", precio: 4000},
+    {nombre: "chomba", precio: 1500},
+    {nombre: "remera", precio: 1250},
+    {nombre: "entrenamiento", precio: 1000},
+    {nombre: "short", precio: 750},
+];
 
-let productos = prompt("Consulte el stock de la prenda que usted quiera comprar (Buzo, Campera, Pantalon, Chomba, Remera de algodon, Remera de entrenamiento, Short)")
+let carrito = []
 
-switch (productos.toLowerCase()){
-    case "buzo":
-        console.log("si, tenemos", productos)
-        break
-    case "campera":
-        console.log("si, tenemos ", productos)
-        break
-    case "pantalon":
-        console.log("si, tenemos", productos)
-        break
-    case "chomba":
-        console.log("si, tenemos", productos)
-        break
-    case "remera de algodon":
-        console.log("si, tenemos", productos)
-        break
-    case "remera de entrenamiento":
-        console.log("si, tenemos", productos)
-        break
-    case "short":
-        console.log("si, tenemos", productos)
-        break
-    default:
-        console.warn("no tenemos en stock")    
+let seleccion = prompt("Hola, ¿desea comprar algún producto? si o no")
+
+while(seleccion != "si" && seleccion != "no"){
+    alert("por favor ingrese si o no")
+    seleccion = prompt("hola ¿desea comprar algun producto? si o no")
 }
 
+if(seleccion == "si"){
+    alert("A continuación nuestra lista de productos")
+    let todosLosProductos = productos.map(
+        (producto) => producto.nombre + " - " + producto.precio + "$"
+    );
+    alert(todosLosProductos.join(" - "))
+} else if (seleccion == "no"){
+    alert ("Gracias por visitar nuestra WebStore")
+}
 
-let tipoProducto = parseInt(prompt("¿Que desea comprar?(Ingrese solamente el número de la opción): 1-Buzo, 2-Campera, 3-Pantalon, 4-Chomba, 5-Remera de algodon, 6-Remera de entrenamiento, 7-Short"))
-venta () 
+while(seleccion != "no"){
+    let producto = prompt("agrega un producto a tu carrito")
+    let precio = 0
 
-function venta() {
-    switch (tipoProducto){
-        case 1:  
-            alert("Perfecto, tu Buzo Mensana se ha añadido al carrito. El valor es de $5000")
-            break   
-        case 2:
-            alert("Perfecto, tu Campera Mensana se ha añadido al carrito. El valor es de $6000")
-            break
-        case 3:
-            alert("Perfecto, tu Pantalon Mensana se ha añadido al carrito. El valor es de $4000")
-            break
-        case 4:
-            alert("Perfecto, tu Chomba Mensana se ha añadido al carrito. El valor es de $1500")
-            break
-        case 5:
-            alert("Perfecto, tu Remera de algodón Mensana se ha añadido al carrito. El valor es de $1250")
-            break
-        case 6:
-            alert("Perfecto, tu Remera de entrenamiento Mensana se ha añadido al carrito. El valor es de $1000")
-            break
-        case 7:
-            alert("Perfecto, tu Short de entrenamiento Mensana se ha añadido al carrito. El valor es de $750")
-            break
+    if(producto == "buzo" || producto == "campera" || producto == "pantalon" || producto == "chomba" || producto == "remera" || producto == "entrenamiento" || producto == "short"){
+        switch(producto){
+            case "buzo":
+                precio = 5000;
+                break;
+            case "campera":
+                precio = 6000;
+                break;
+            case "pantalon":
+                precio = 4000;
+                break;
+            case "chomba":
+                precio = 1500;
+                break;
+            case "remera":
+                precio = 1250;
+                break;
+            case "entrenamiento":
+                precio = 1000;
+                break;
+            case "short":
+                precio = 750;
+                break;
+            default:
+                break;
+        }
+    let unidades = parseInt(prompt("¿Cuantas unidades quiere llevar?"))
+
+    carrito.push({producto, unidades, precio})
+    console.log(carrito)
+    } else {
+        alert ("No tenemos ese producto")      
     }
+
+    seleccion = prompt("¿Desea seguir comprano?")
+
+    while(seleccion === "no"){
+        alert("Gracios por su compra ")
+        carrito.forEach((carritoFinal) => {
+            console.log(`producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades}, total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio}`)
+        })
+        break;
+    }    
 }
+
+const total = carrito.reduce((acumulador, elemento) => acumulador + elemento.precio * elemento.unidades, 0)
+console.log(`El total a pagar por su compra es : ${total}`)
