@@ -1,0 +1,28 @@
+[
+    {
+        "nombre": "Buzo",
+        "descripcion": "Buzo de algodón Mensana",
+        "precio": 5000
+    },
+    {
+        "nombre": "Campera",
+        "descripcion": "Campera de buzo Mensana",
+        "precio": 4000
+      },
+    {
+    "nombre": "Pantalón",
+    "descripcion": "Pantalón de buzo Mensana",
+    "precio": 3000
+  },
+  {
+    "nombre": "Remera",
+    "descripcion": "Remera de algodón Mensana",
+    "precio": 2000
+  },
+  {
+    "nombre": "Short",
+    "descripcion": "Short de entrenamiento Mensana",
+    "precio": 1000
+  }
+    
+]
